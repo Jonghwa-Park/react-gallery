@@ -2,7 +2,7 @@ import axios from "axios";
 
 
 export const getCardList = async () =>{
-    const cardData = await axios.get('http://localhost:5000/cardList')
+    const cardData = await axios.get('http://localhost:8000/cardList')
     return{
         type:'GET_CARD_LIST',
         payload : cardData.data
@@ -18,7 +18,7 @@ export const getCardListByFilterCateogry = (filterType) =>{
 }
 
 export const getCardDetail = async(detailId) =>{
-    const cardDetail = await axios.get(`http://localhost:5000/cardList/${detailId}`)
+    const cardDetail = await axios.get(`http://localhost:8000/cardList/${detailId}`)
     return{
         type:'GET_CARD_DETAIL',
         payload : cardDetail.data
