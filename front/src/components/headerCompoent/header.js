@@ -1,7 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Link} from "react-router-dom";
 
 const Header = () => {
+
+    const [active, setActive] = useState('Home')
+
     return (
         <div>
             <header>
@@ -16,16 +19,20 @@ const Header = () => {
                                 className="navbar-toggler-icon"></span></button>
                             <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                                 <ul className="navbar-nav ml-auto">
-                                    <li className="nav-item active">
+                                    <li className={active === 'Home'? 'nav-item active' : 'nav-item'}
+                                        onClick={()=>setActive('Home')}>
                                         <Link to='/index' className="nav-link">Home</Link>
                                     </li>
-                                    <li className="nav-item">
+                                    <li className={active === 'About'? 'nav-item active' : 'nav-item'}
+                                        onClick={()=>setActive('About')}>
                                         <Link to='/about' className="nav-link">About</Link>
                                     </li>
-                                    <li className="nav-item">
+                                    <li className={active === 'Blog'? 'nav-item active' : 'nav-item'}
+                                        onClick={()=>setActive('Blog')}>
                                         <Link to='/blog' className="nav-link">Blog</Link>
                                     </li>
-                                    <li className="nav-item">
+                                    <li className={active === 'Contact'? 'nav-item active' : 'nav-item'}
+                                        onClick={()=>setActive('Contact')}>
                                         <Link to='/contact' className="nav-link">Contact</Link>
                                     </li>
                                 </ul>

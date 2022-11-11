@@ -24,7 +24,7 @@ const Detail = () => {
                 <div className="container">
                     <div className="container pp-section">
                         <div className="h3 font-weight-normal">{cardDetail.title}</div>
-                        <img className="img-fluid mt-4" src={`/images/${detail}`}/>
+                        <img className="img-fluid mt-4" src={`${cardDetail.imgSrc}`}/>
                         <div className="row mt-5">
                             <div className="col-md-3">
                                 <div className="h5">Tags</div>

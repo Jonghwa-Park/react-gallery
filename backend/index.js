@@ -60,4 +60,12 @@ app.get('/cardList/:detailId', (req, res) => {
 })
 
 
+app.post('/contact', async (req, res, next) => {
+    console.log(`req.body : ${JSON.stringify(req.body)}`)
+    const result = contact.push(req.body)
+    await db.write()
+    res.json(result)
+})
+
+
 app.listen(8000)

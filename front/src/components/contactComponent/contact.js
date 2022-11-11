@@ -24,7 +24,7 @@ const Contact = () => {
 
     const handleSubmit = async(event)  => {
         event.preventDefault()
-        await axios.post(`http://localhost:5000/contact`, fields).then(function (response) {
+        await axios.post(`http://localhost:8000/contact`, fields).then(function (response) {
             alert('Succeed, You requested information will be cleard')
             setFields(initFields)
         }).catch(function (err) {
